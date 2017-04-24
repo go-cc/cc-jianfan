@@ -3,7 +3,6 @@
 // This is a simple implementation of Chinese one-to-one conversion.
 // If you need more advanced converter, please visit
 // OpenCC https://github.com/BYVoid/OpenCC
-
 package ccst
 
 import "fmt"
@@ -31,7 +30,7 @@ func init() {
 	}
 }
 
-// Convert Traditional Chinese to Simplified Chinese
+// T2S converts Traditional Chinese to Simplified Chinese
 func T2S(s string) string {
 	var chs []rune
 	for _, runeValue := range s {
@@ -44,7 +43,7 @@ func T2S(s string) string {
 	return string(chs)
 }
 
-// Convert Simplified Chinese to Traditional Chinese
+// S2T converts Simplified Chinese to Traditional Chinese
 func S2T(s string) string {
 	var cht []rune
 	for _, runeValue := range s {
@@ -57,14 +56,14 @@ func S2T(s string) string {
 	return string(cht)
 }
 
-// Dump Simplified to Traditional Chinese dict
+// STDump dumps Simplified to Traditional Chinese dict
 func STDump() {
 	for kk, vv := range s2tMapping {
 		fmt.Printf("%c:%c\n", kk, vv)
 	}
 }
 
-// Dump Traditional to Simplified Chinese dict
+// TSDump dumps Traditional to Simplified Chinese dict
 func TSDump() {
 	for kk, vv := range t2sMapping {
 		fmt.Printf("%c:%c\n", vv, kk)
