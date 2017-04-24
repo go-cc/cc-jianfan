@@ -9,6 +9,7 @@
 ## TOC
 - [API](#api)
   - [> jianfan_test.go](#-jianfan_testgo)
+- [Credits](#credits)
 
 中文简繁互转  
 Chinese-Character Jian<=>Fan converter
@@ -37,7 +38,7 @@ func Example_output() {
 	//   not here!
 	fmt.Println(ccst.T2S(sf))
 	sj = ccst.T2S("增補臺灣標準IT詞彙。")
-	fmt.Println(sj);
+	fmt.Println(sj)
 	fmt.Println(ccst.S2T(sj))
 
 	// Output:
@@ -51,3 +52,10 @@ func Example_output() {
 ```
 
 All patches welcome.
+
+# Credits
+
+- [github.com/siongui/gojianfan](https://github.com/siongui/gojianfan)
+  where the code was initially ported from
+- [OpenCC](https://github.com/BYVoid/OpenCC)
+  where the Jian<=>Fan lookup table is based on

@@ -17,3 +17,10 @@ Chinese-Character Jian<=>Fan converter
 #### > {{cat "jianfan_test.go" | color "go"}}
 
 All patches welcome.
+
+# Credits
+
+- [github.com/siongui/gojianfan](https://github.com/siongui/gojianfan)
+  where the code was initially ported from
+- [OpenCC](https://github.com/BYVoid/OpenCC)
+  where the Jian<=>Fan lookup table is based on
