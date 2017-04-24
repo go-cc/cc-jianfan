@@ -11,13 +11,13 @@ var t2sMapping = make(map[rune]rune)
 var s2tMapping = make(map[rune]rune)
 
 func init() {
-	if len([]rune(ChT)) != len([]rune(ChS)) {
+	if len([]rune(chT)) != len([]rune(chS)) {
 		panic("cht and chs data length not equal")
 	}
 
-	for index := 0; index < len([]rune(ChS)); index++ {
-		runeValueS := []rune(ChS)[index]
-		runeValueT := []rune(ChT)[index]
+	for index := 0; index < len([]rune(chS)); index++ {
+		runeValueS := []rune(chS)[index]
+		runeValueT := []rune(chT)[index]
 		// if runeValueS == '𬸪' || runeValueS == '𬸪' {
 		// 	fmt.Fprintf(os.Stderr, "%c:%c\n", runeValueS, runeValueT)
 		// 	continue
