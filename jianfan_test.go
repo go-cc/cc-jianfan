@@ -17,7 +17,7 @@ func Example_output() {
 	//   not here!
 	fmt.Println(ccst.T2S(sf))
 	sj = ccst.T2S("增補臺灣標準IT詞彙。")
-	fmt.Println(sj);
+	fmt.Println(sj)
 	fmt.Println(ccst.S2T(sj))
 
 	// Output:
