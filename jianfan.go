@@ -6,9 +6,7 @@
 
 package ccst
 
-import (
-	"unicode/utf8"
-)
+import "fmt"
 
 var t2sMapping = make(map[rune]rune)
 var s2tMapping = make(map[rune]rune)
@@ -18,8 +16,13 @@ func init() {
 		panic("cht and chs data length not equal")
 	}
 
-	for index, runeValueT := range ChT {
-		runeValueS, _ := utf8.DecodeRuneInString(ChS[index:])
+	for index := 0; index < len([]rune(ChS)); index++ {
+		runeValueS := []rune(ChS)[index]
+		runeValueT := []rune(ChT)[index]
+		// if runeValueS == '𬸪' || runeValueS == '𬸪' {
+		// 	fmt.Fprintf(os.Stderr, "%c:%c\n", runeValueS, runeValueT)
+		// 	continue
+		// }
 		t2sMapping[runeValueT] = runeValueS
 		// Simplified => Traditional is one to many, pick first
 		if _, ok := s2tMapping[runeValueS]; !ok {
@@ -52,4 +55,18 @@ func S2T(s string) string {
 		}
 	}
 	return string(cht)
+}
+
+// Dump Simplified to Traditional Chinese dict
+func STDump() {
+	for kk, vv := range s2tMapping {
+		fmt.Printf("%c:%c\n", kk, vv)
+	}
+}
+
+// Dump Traditional to Simplified Chinese dict
+func TSDump() {
+	for kk, vv := range t2sMapping {
+		fmt.Printf("%c:%c\n", vv, kk)
+	}
 }
